@@ -1,4 +1,4 @@
-package com.iskan.jello
+package com.iskan.auth
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,21 +16,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.iskan.auth.signin.SignInScreen
-import com.iskan.jello.ui.theme.JelloTheme
+import com.iskan.ui.theme.JelloTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-//            JelloTheme {
+            JelloTheme {
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    Greeting(
 //                        name = "Android",
 //                        modifier = Modifier.padding(innerPadding)
 //                    )
-//                }
                 SignInScreen()
+
             }
         }
     }
