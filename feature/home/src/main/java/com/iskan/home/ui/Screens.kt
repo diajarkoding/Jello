@@ -5,11 +5,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun HomeScreen() {
-    ScreenContent("Home")
-}
-
-@Composable
 fun ProductScreen() {
     ScreenContent("Product")
 }

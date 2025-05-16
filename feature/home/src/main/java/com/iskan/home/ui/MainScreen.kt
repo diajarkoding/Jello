@@ -21,6 +21,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.iskan.home.ui.home.HomeScreen
 import com.iskan.ui.theme.VeryDarkGrayishBlue
 
 @Composable
