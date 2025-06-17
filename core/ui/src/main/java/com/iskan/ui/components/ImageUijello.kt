@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -19,6 +20,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 //import coil.compose.AsyncImagePainter
 //import coil.compose.rememberAsyncImagePainter
 //import coil.request.ImageRequest
@@ -28,7 +32,7 @@ import com.iskan.ui.theme.VeryLightGray
 fun JelloImageViewClick(
     onClick: () -> Unit = {},
     color: Color = Color.Black,
-    imageVector: ImageVector = Icons.Default.ArrowBack,
+    imageVector: ImageVector = Icons.AutoMirrored.Filled.ArrowBack,
     imageDescription: String = "Back",
     modifier: Modifier = Modifier.size(24.dp)
 ) {
@@ -48,49 +52,49 @@ fun JelloImageViewClickPreview() {
     JelloImageViewClick()
 }
 
-//@Composable
-//fun JelloImageViewPhotoUrlRounded(
-//    url: String,
-//    description: String,
-//) {
-//    val painter = rememberAsyncImagePainter(
-//        ImageRequest
-//            .Builder(LocalContext.current)
-//            .data(data = url)
-//            .apply(block = fun ImageRequest.Builder.() {
-//                crossfade(true)
-//                    .transformations()
-//                    .build()
-//            })
-//            .build()
-//    )
-//
-//    val state = painter.state
-//
-//    Box(
-//        contentAlignment = Alignment.Center
-//    ) {
-//        if (state is AsyncImagePainter.State.Loading || state is AsyncImagePainter.State.Error) {
-//            CircularProgressIndicator(
-//                color = VeryLightGray
-//            )
-//        }
-//
-//        Image(
-//            painter = painter,
-//            contentDescription = description,
-//            modifier = Modifier
-//                .size(100.dp)
-//                .clip(RoundedCornerShape(8.dp))
-//        )
-//    }
-//}
-//
-//@Preview
-//@Composable
-//fun JelloImageViewPhotoUrlRoundedPreview() {
-//    JelloImageViewPhotoUrlRounded(
-//        url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-//        description = "Pokemon 1"
-//    )
-//}
+@Composable
+fun JelloImageViewPhotoUrlRounded(
+    url: String,
+    description: String,
+) {
+    val painter = rememberAsyncImagePainter(
+        ImageRequest
+            .Builder(LocalContext.current)
+            .data(data = url)
+            .apply(block = fun ImageRequest.Builder.() {
+                crossfade(true)
+                    .transformations()
+                    .build()
+            })
+            .build()
+    )
+
+    val state = painter.state
+
+    Box(
+        contentAlignment = Alignment.Center
+    ) {
+        if (state is AsyncImagePainter.State.Loading || state is AsyncImagePainter.State.Error) {
+            CircularProgressIndicator(
+                color = VeryLightGray
+            )
+        }
+
+        Image(
+            painter = painter,
+            contentDescription = description,
+            modifier = Modifier
+                .size(100.dp)
+                .clip(RoundedCornerShape(8.dp))
+        )
+    }
+}
+
+@Preview
+@Composable
+fun JelloImageViewPhotoUrlRoundedPreview() {
+    JelloImageViewPhotoUrlRounded(
+        url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        description = "Pokemon 1"
+    )
+}

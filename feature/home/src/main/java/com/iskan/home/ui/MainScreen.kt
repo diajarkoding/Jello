@@ -22,6 +22,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.iskan.home.ui.home.HomeScreen
+import com.iskan.home.ui.product.ProductScreen
 import com.iskan.ui.theme.VeryDarkGrayishBlue
 
 @Composable
@@ -31,7 +32,7 @@ fun MainScreen() {
 
     Scaffold(
         bottomBar = {
-            bottomNavigationBar(navController)
+            BottomNavigationBar(navController)
         }
     ) {
         innerPadding ->
@@ -43,7 +44,7 @@ fun MainScreen() {
 }
 
 @Composable
-fun bottomNavigationBar(navController: NavController){
+fun BottomNavigationBar(navController: NavController){
     val items = listOf(
         BottomNavItem.Home,
         BottomNavItem.Product,
