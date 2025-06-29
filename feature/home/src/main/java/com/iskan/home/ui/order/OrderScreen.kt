@@ -2,11 +2,15 @@ package com.iskan.home.ui.order
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
@@ -24,10 +28,12 @@ import androidx.compose.ui.unit.dp
 import com.iskan.home.ui.ScreenContent
 import com.iskan.home.ui.product.ItemProduct
 import com.iskan.ui.components.JelloImageViewClick
+import com.iskan.ui.components.JelloImageViewPhotoUrlRounded
 import com.iskan.ui.components.JelloTextRegular
 import com.iskan.ui.theme.Gray
 import com.iskan.ui.theme.LightGrayishBlue
 import com.iskan.ui.theme.VeryLightGray
+import com.iskan.ui.theme.VividRed
 
 @Composable
 fun OrderScreen() {
@@ -96,8 +102,55 @@ fun OrderScreen() {
             )
         }
 
+        ItemProductGrid()
+
     }
 }
+
+@Composable
+fun ItemProductGrid() {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(2),
+        modifier = Modifier
+            .background(Color.White),
+         contentPadding = PaddingValues(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+
+        items(count = 10) {
+            Column {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                        },
+                    colors = CardDefaults.cardColors(
+                        containerColor = LightGrayishBlue
+                    )
+                ) {
+                    JelloImageViewPhotoUrlRounded(
+                        url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/200.png",
+                        description = "Pokemon"
+                    )
+                }
+
+                JelloTextRegular(
+                    text = "Nama Produk",
+                    modifier = Modifier.padding(top = 11.dp)
+                )
+                JelloTextRegular(
+                    text = "$ 130",
+                    modifier = Modifier.padding(top = 9.dp),
+                    color = VividRed
+                )
+            }
+        }
+
+    }
+        }
+
+
 
 @Preview(showBackground = true)
 @Composable
