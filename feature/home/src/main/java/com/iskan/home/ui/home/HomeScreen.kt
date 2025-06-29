@@ -32,7 +32,6 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.iskan.home.ui.ScreenContent
 import com.iskan.ui.R
 import com.iskan.ui.components.BannerSliderUiJello
 import com.iskan.ui.components.JelloImageViewClick

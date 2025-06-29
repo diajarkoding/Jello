@@ -25,7 +25,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.iskan.home.ui.ScreenContent
 import com.iskan.home.ui.product.ItemProduct
 import com.iskan.ui.components.JelloImageViewClick
 import com.iskan.ui.components.JelloImageViewPhotoUrlRounded
