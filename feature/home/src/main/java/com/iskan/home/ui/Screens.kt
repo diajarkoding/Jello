@@ -6,11 +6,6 @@ import androidx.compose.runtime.Composable
 
 
 @Composable
-fun OrderScreen() {
-    ScreenContent("Order")
-}
-
-@Composable
 fun AccountScreen() {
     ScreenContent("Account")
 }

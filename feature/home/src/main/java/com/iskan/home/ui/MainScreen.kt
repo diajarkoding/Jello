@@ -22,6 +22,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.iskan.home.ui.home.HomeScreen
+import com.iskan.home.ui.order.OrderScreen
 import com.iskan.home.ui.product.ProductScreen
 import com.iskan.ui.theme.VeryDarkGrayishBlue
 

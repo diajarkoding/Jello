@@ -1,19 +1,17 @@
-package com.iskan.home.ui.product
+package com.iskan.home.ui.order
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,17 +21,16 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.iskan.home.ui.ScreenContent
+import com.iskan.home.ui.product.ItemProduct
 import com.iskan.ui.components.JelloImageViewClick
-import com.iskan.ui.components.JelloImageViewPhotoUrlRounded
 import com.iskan.ui.components.JelloTextRegular
-import com.iskan.ui.components.RatingBar
 import com.iskan.ui.theme.Gray
 import com.iskan.ui.theme.LightGrayishBlue
 import com.iskan.ui.theme.VeryLightGray
-import com.iskan.ui.theme.VividRed
 
 @Composable
-fun ProductScreen(){
+fun OrderScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -94,64 +91,16 @@ fun ProductScreen(){
                 color = LightGrayishBlue
             )
             JelloImageViewClick(
-                imageVector = ImageVector.vectorResource(com.iskan.ui.R.drawable.ic_katalog_style),
+                imageVector = ImageVector.vectorResource(com.iskan.ui.R.drawable.ic_katalog_more),
                 color = LightGrayishBlue
             )
         }
 
-        ItemProduct()
-
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
-fun ProductScreenPreview(){
-    ProductScreen()
-}
-
-@Composable
-fun ItemProduct() {
-    LazyColumn(
-        modifier = Modifier
-            .padding(top = 16.dp)
-            .padding(horizontal = 16.dp)
-            .background(Color.White)
-    ) {
-        items(10) {
-            Row {
-                Card(
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .size(100.dp)
-                        .clickable { /* Handle click */ },
-                    colors = CardDefaults.cardColors(
-                        containerColor = LightGrayishBlue
-                    )
-                ) {
-                    JelloImageViewPhotoUrlRounded(
-                        url = "https://picsum.photos/200/300",
-                        description = ""
-                    )
-                }
-                Spacer(modifier = Modifier.padding(start = 8.dp))
-                Column {
-                    JelloTextRegular(
-                        text = "Product Name",
-                        modifier = Modifier,
-                    )
-                    JelloTextRegular(
-                        text = "Rp. 100.000",
-                        modifier = Modifier.padding(top = 7.dp),
-                        color = VividRed
-                    )
-                    RatingBar(
-                        rating = 2f,
-                        modifier = Modifier.padding(top = 18.dp),
-                        onRatingChanged = { /* Handle rating change */ }
-                    )
-                }
-            }
-        }
-    }
+fun OrderScreenPreview(){
+    OrderScreen()
 }
