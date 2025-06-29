@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.hilt.gradle.plugin)
     id("kotlin-kapt")
 }
 
@@ -44,6 +45,7 @@ dependencies {
 //    module
     implementation(project(":feature:auth"))
     implementation(project(":feature:home"))
+    implementation(project(":core:navigator"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -60,4 +62,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }

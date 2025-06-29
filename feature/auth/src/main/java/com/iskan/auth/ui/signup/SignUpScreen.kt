@@ -1,4 +1,4 @@
-package com.iskan.auth.signup
+package com.iskan.auth.ui.signup
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -13,13 +13,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.iskan.ui.components.JelloButtonPrimary
-import com.iskan.ui.components.JelloButtonSosmedRow
 import com.iskan.ui.components.JelloEditText
 import com.iskan.ui.components.JelloImageViewClick
 import com.iskan.ui.components.JelloTextHeader
 import com.iskan.ui.components.JelloTextRegular
 import com.iskan.ui.components.JelloTextRegularWithClick
-import com.iskan.ui.components.JelloTextViewRow
 
 @Composable
 fun SignUpScreen(

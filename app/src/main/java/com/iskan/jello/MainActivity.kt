@@ -15,8 +15,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.iskan.auth.signin.SignInScreen
-import com.iskan.auth.signup.SignUpScreen
 import com.iskan.jello.ui.theme.JelloTheme
 
 class MainActivity : ComponentActivity() {
