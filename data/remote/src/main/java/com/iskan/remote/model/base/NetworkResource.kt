@@ -2,24 +2,26 @@ package com.iskan.remote.model.base
 
 import java.io.IOException
 
-sealed class NetworkResource<out V: Any, out T: Any> {
-    /**
-     * Represents a successful network response.
-     */
-    data class NetworkSuccess<V: Any>(val data: V): NetworkResource<V, Nothing>()
+sealed class NetworkResource<out V: Any, out T:Any> {
 
     /**
-     * Indicates a network API error, for example, a 401 error.
+     * Ini untuk Success Data : 200
      */
-    data class NetworkApiError<T: Any>(val errorData: T?, val code: Int): NetworkResource<Nothing, T>()
+    data class NetworkSuccess<V: Any>(val data: V?): NetworkResource<V, Nothing>()
 
     /**
-     * Represents a network issue, such as no internet connection.
+     * Kecuali 200
      */
-    data class NetworkIssue(val error: IOException): NetworkResource<Nothing, Nothing>()
+    data class NetworkApiError<T: Any>(val errData: T?, val code: Int): NetworkResource<Nothing, T>()
 
     /**
-     * Represents an error when parsing JSON data.
+     * Network Issue
      */
-    data class NetworkUnknownError(val throwable: Throwable): NetworkResource<Nothing, Nothing>()
+    data class NetworkError(val error: IOException?): NetworkResource<Nothing, Nothing>()
+
+    /**
+     * Parsing JSON Error
+     */
+    data class NetworkUnknowError(val throwable: Throwable?): NetworkResource<Nothing, Nothing>()
+
 }

@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -42,4 +43,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.gson)
+    implementation(libs.converter.gson)
+    implementation(libs.retrofit)
 }
