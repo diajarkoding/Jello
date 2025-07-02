@@ -29,10 +29,10 @@ android {
             )
         }
         getByName("debug") {
-            buildConfigField("String", "BASE_URL", "https://assests.bagicode.com/bcompose/")
+            buildConfigField("String", "BASE_URL", "\"https://assets.bagicode.com/bcompose/\"")
         }
         getByName("release") {
-            buildConfigField("String", "BASE_URL", "https://assests.bagicode.com/bcompose/")
+            buildConfigField("String", "BASE_URL", "\"https://assets.bagicode.com/bcompose/\"")
         }
     }
     compileOptions {
@@ -44,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
