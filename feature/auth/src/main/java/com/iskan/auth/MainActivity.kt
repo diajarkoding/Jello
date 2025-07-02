@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
                     composable(Screen.AuthSignIn.route){
                         SignInScreen(
                             navController = navController,
-                            viewmodel = signInViewModel
+                            viewModel = signInViewModel
                             )
                     }
                     composable(Screen.AuthSignUp.route){

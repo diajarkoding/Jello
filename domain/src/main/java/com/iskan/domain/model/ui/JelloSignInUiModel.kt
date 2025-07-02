@@ -1,6 +1,6 @@
 package com.iskan.domain.model.ui
 
-data class JelloSigninUiModel (
+data class JelloSignInUiModel (
     val code: Int = 0,
     val message: String = "",
     val address: String = "",
