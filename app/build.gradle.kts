@@ -84,6 +84,10 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
 
+    //chucker
+    debugImplementation(libs.library)
+    releaseImplementation(libs.library.no.op)
+
 }
 
 kapt {
