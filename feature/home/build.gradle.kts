@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.hilt.gradle.plugin)
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +43,7 @@ android {
 
 dependencies {
     implementation(project(":core:ui"))
+    implementation(project(":domain"))
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.material)
@@ -58,4 +61,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Dagger Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.runtime.livedata)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }
