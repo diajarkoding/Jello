@@ -1,6 +1,8 @@
 package com.iskan.jello.di
 import com.iskan.domain.repository.JelloRepository
 import com.iskan.domain.repository.PreferenceRepository
+import com.iskan.local.preference.SharedPreference
+import com.iskan.local.repository.PreferenceRepositoryImpl
 import com.iskan.remote.repository.JelloRepositoryImpl
 import com.iskan.remote.services.JelloService
 import dagger.Module
@@ -18,9 +20,9 @@ class RepositoryModule {
         return JelloRepositoryImpl(jelloService)
     }
 
-//    @Provides
-//    @Singleton
-//    fun providesPreferenceRepository(sharedPreference: SharedPreference) : PreferenceRepository {
-//        return PreferenceRepositoryImpl(sharedPreference)
-//    }
+    @Provides
+    @Singleton
+    fun providesPreferenceRepository(sharedPreference: SharedPreference) : PreferenceRepository {
+        return PreferenceRepositoryImpl(sharedPreference)
+    }
 }

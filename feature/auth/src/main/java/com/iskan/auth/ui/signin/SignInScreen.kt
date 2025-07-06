@@ -44,6 +44,12 @@ fun SignInScreen(
 
     val context = LocalContext.current
 
+    viewModel.getToken()
+    val token by viewModel.token.observeAsState()
+    if (!token.isNullOrEmpty()) {
+        viewModel.onNavigateToHome(context)
+    }
+
     val signInState by viewModel.signIn.observeAsState()
     LaunchedEffect(signInState) {
         when (val state = signInState) {
@@ -81,11 +87,9 @@ fun SignInScreen(
 
         JelloImageViewClick(onClick = {})
 
-//        Spacer(modifier = Modifier.height(30.dp))
 
         JelloTextHeader()
 
-//        Spacer(modifier = Modifier.height(10.dp))
 
         JelloTextRegularWithClick(
             onClick = {
@@ -93,11 +97,9 @@ fun SignInScreen(
             }
         )
 
-//        Spacer(modifier = Modifier.height(25.dp))
 
         JelloTextRegular()
 
-//        Spacer(modifier = Modifier.height(10.dp))
 
         JelloEditText(
             value = email.value,
@@ -108,11 +110,9 @@ fun SignInScreen(
             errorMessages = "Email is required"
         )
 
-//        Spacer(modifier = Modifier.height(25.dp))
 
         JelloTextRegular(text = "Password")
 
-//        Spacer(modifier = Modifier.height(10.dp))
 
         JelloEditText(
             value = password.value,
