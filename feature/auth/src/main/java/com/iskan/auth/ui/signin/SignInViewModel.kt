@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.diajarkoding.navigator.Navigator
+import com.iskan.navigator.Navigator
 import com.iskan.auth.state.SignInState
 import com.iskan.domain.model.base.UiState
 import com.iskan.domain.usecase.GetTokenUserUseCase

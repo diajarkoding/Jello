@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.diajarkoding.navigator"
+    namespace = "com.iskan.navigator"
     compileSdk = 35
 
     defaultConfig {

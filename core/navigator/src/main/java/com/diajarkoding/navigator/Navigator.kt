@@ -1,4 +1,4 @@
-package com.diajarkoding.navigator
+package com.iskan.navigator
 
 import android.content.Context
 

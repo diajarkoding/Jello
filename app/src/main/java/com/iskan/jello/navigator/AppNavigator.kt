@@ -2,7 +2,7 @@ package com.iskan.jello.navigator
 
 import android.content.Context
 import android.content.Intent
-import com.diajarkoding.navigator.Navigator
+import com.iskan.navigator.Navigator
 import com.iskan.auth.MainActivity
 import com.iskan.home.HomeActivity
 import javax.inject.Inject

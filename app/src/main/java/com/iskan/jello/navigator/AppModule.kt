@@ -1,6 +1,6 @@
 package com.iskan.jello.navigator
 
-import com.diajarkoding.navigator.Navigator
+import com.iskan.navigator.Navigator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
