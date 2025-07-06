@@ -45,7 +45,6 @@ fun SignInScreen(
     val context = LocalContext.current
 
     val signInState by viewModel.signIn.observeAsState()
-
     LaunchedEffect(signInState) {
         when (val state = signInState) {
             is SignInState.OnSignInLoading -> {
@@ -106,7 +105,7 @@ fun SignInScreen(
                 email.value = it
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-//            errorMessages = "Email is required"
+            errorMessages = "Email is required"
         )
 
 //        Spacer(modifier = Modifier.height(25.dp))
@@ -121,15 +120,22 @@ fun SignInScreen(
                 password.value = it
             },
             visualTransformation = PasswordVisualTransformation(),
-//            errorMessages = "Password is required"
+            errorMessages = "Password is required"
         )
 
         JelloTextViewRow()
 
         JelloButtonPrimary(
             onClick = {
-                viewModel.postSignIn(email = email.value, password = password.value)
+                if (email.value.isBlank() && password.value.isBlank()) {
+                    Toast.makeText(context, "Email and Password is required", Toast.LENGTH_SHORT).show()
+                    return@JelloButtonPrimary
+                } else {
+                    viewModel.postSignIn(email = email.value, password = password.value)
+
+                }
             },
+            enabled = email.value.isNotBlank() && password.value.isNotBlank(),
         )
 
         JelloButtonSosmedRow()

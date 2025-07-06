@@ -5,7 +5,7 @@ import com.iskan.domain.model.domain.JelloSigninDomainModel
 import com.iskan.remote.model.signin.JelloBaseResponse
 import com.iskan.remote.model.signin.JelloSignInResponse
 
-class JelloSigninDomainMapper : Mapper<JelloBaseResponse<JelloSignInResponse>, JelloSigninDomainModel> {
+class JelloSignInDomainMapper : Mapper<JelloBaseResponse<JelloSignInResponse>, JelloSigninDomainModel> {
     override fun to(t: JelloBaseResponse<JelloSignInResponse>): JelloSigninDomainModel =
         JelloSigninDomainModel(
             code = t.code ?: 0,

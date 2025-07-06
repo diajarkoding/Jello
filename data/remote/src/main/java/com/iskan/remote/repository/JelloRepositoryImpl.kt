@@ -5,7 +5,7 @@ import com.iskan.domain.model.domain.JelloHomeDomainModel
 import com.iskan.domain.model.domain.JelloSigninDomainModel
 import com.iskan.domain.repository.JelloRepository
 import com.iskan.remote.mapper.sigin.JelloHomeDomainMapper
-import com.iskan.remote.mapper.sigin.JelloSigninDomainMapper
+import com.iskan.remote.mapper.sigin.JelloSignInDomainMapper
 import com.iskan.remote.services.JelloService
 import com.iskan.remote.utils.handleApiCall
 import javax.inject.Inject
@@ -23,7 +23,7 @@ class JelloRepositoryImpl @Inject constructor(
                   email, password
               )
             },
-            mapperToDomain = JelloSigninDomainMapper()
+            mapperToDomain = JelloSignInDomainMapper()
         )
     }
 
